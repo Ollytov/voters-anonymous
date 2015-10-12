@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="signup-head col-md-8 col-md-offset-2 text-center">
+        <h1>Create Your Free Poll Below!</h1>
+        <p>Fill out the form below to create your own poll that can be shared with any of your friends!</p>
+        <p>If you want to save your poll and access more customization options, <a href="/users/create">Create a Free Account Now!</a>.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+    <form method="post">
+        <div class="form-group">
+            <label for="title">Give your Poll a Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Title" value="{{input.title}}" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Select Category</label>
+            <select class="form-control" id="category" name="category" placeholder="Choose Category">
+                {{#each category}}
+                <option>{{this.category}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="option1">Option</label>
+            <input type="text" class="form-control" name="option" placeholder="Option" required>
+        </div>
+        <div class="form-group">
+            <label for="option2">Option</label>
+            <input type="text" class="form-control" name="option" placeholder="Option" required>
+        </div>
+        <div class="form-group">
+            <label for="option3">Option</label>
+            <input type="text" class="form-control" name="option" placeholder="Option">
+        </div>
+        <div class="form-group">
+            <label for="option4">Option</label>
+            <input type="text" class="form-control" name="option" placeholder="Option">
+        </div>
+        
+        <button type="submit" class="btn btn-lg btn-success">Submit</button>
+        {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
+    </form>
+    </div>
+</div>

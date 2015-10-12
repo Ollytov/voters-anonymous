@@ -1,0 +1,64 @@
+body {
+  font-family: Georgia;
+}
+
+.head-wrap {
+  border: 2px solid black;
+  padding-bottom: 70px;
+}
+
+.head-wrap h1 {
+  padding-top: 60px;
+  font-size: 50px;
+}
+
+.headbtn {
+  margin: 10px 5px 0 5px;
+}
+
+.info-box {
+  border: 1px solid black;
+  margin-top: 30px;
+  height: 250px;
+  padding: 10px;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.desc {
+  font-size: 23px;
+}
+
+.form-menu {
+  padding: 20px;
+  width: 275px;
+}
+
+.signup-text {
+  margin: 10px 0 -10px 0;
+}
+
+.signup-head {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.alert {
+  margin-top: 5px;
+}
+
+/* Main Dashboard Styles */
+.main-dashboard {
+  height: 300px;
+  padding: 50px;
+}
+
+.main-dashboard h1 {
+  font-size: 60px;
+}
+
+hr {
+  border: 1px solid black;
+}

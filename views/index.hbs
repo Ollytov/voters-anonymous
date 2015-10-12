@@ -1,0 +1,46 @@
+<div class="head-wrap container-fluid text-center">
+    <h1>Voter's Anonymous</h1>
+    {{#if name}}
+    <h3>Welcome back {{name}}!</h3>
+    {{else}}
+    <h3>Create and share free polls!</h3>
+    {{/if}}
+    <button class="btn btn-lg btn-success headbtn">Create Poll</button>
+    {{#if name}}
+    <a class="btn btn-lg btn-warning headbtn" href="/dashboard">Visit Dashboard</a>
+    {{else}}
+    <a class="btn btn-lg btn-primary headbtn" href="/users/create">Sign Up Now</a>
+    {{/if}}
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="info-box">
+            <div class="icon text-center">
+                <i class="glyphicon glyphicon-floppy-disk"></i>
+            </div>
+            <div class="desc text-center">
+                <p>By creating an account and logging in, you can both save the polls you make forever, and gain access to all of our customization options!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="info-box">
+            <div class="icon text-center">
+                <i class="glyphicon glyphicon-globe"></i>
+            </div>
+            <div class="desc text-center">
+                <p>Share your polls with friends from all around the world! Users can vote and see results without creating an account.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="info-box">
+            <div class="icon text-center">
+                <i class="glyphicon glyphicon-cog"></i>
+            </div>
+            <div class="desc text-center">
+                <p>Customize your polls with our vast collection of settings and options. Create an account now to get started!</p>
+            </div>
+        </div>
+    </div>
+</div>
