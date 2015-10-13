@@ -1,0 +1,15 @@
+{{#if polls}}
+<h1 class="poll-head text-center">{{title}}</h1>
+{{#each polls}}
+<div class="row">
+    <div class="text-center poll-wrap col-md-8 col-md-offset-2">
+        <h1 class="poll-title"><a href="/polls/find/{{this._id}}">{{this.title}}</a></h1>
+        <p class="meta-info">Posted by <a href="/users/polls/{{this.author}}">{{this.author}}</a> in <a href="/polls/show/{{this.category}}">{{this.category}}</a> on {{this.date}}.</p>
+        <p><a href="/polls/results/{{this._id}}">View Results</a>|<a href="/polls/find/{{this._id}}">Vote In Poll</a></p>
+        
+    </div>
+</div>
+{{/each}}
+{{else}}
+<h1 class="poll-head text-center">There are no polls available!</h1>
+{{/if}}

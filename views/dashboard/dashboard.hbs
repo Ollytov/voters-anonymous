@@ -1,4 +1,6 @@
-
+{{#if message}}
+<p class="alert alert-success">{{message}}</p>
+{{/if}}
 <div class="row">
     <div class="main-dashboard col-md-12 text-center">
         <h1>Dashboard</h1>
@@ -7,3 +9,7 @@
 </div>
 
 <hr>
+<div class="poll-config">
+    <h4></h4>
+    <a href="/polls/createcategory" class="btn btn-default">Create Category</a>
+</div>

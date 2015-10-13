@@ -1,3 +1,6 @@
+{{#if messageSuccess}}
+<p class="alert alert-success">{{messageSuccess}}</p>
+{{/if}}
 <div class="head-wrap container-fluid text-center">
     <h1>Voter's Anonymous</h1>
     {{#if name}}
@@ -5,7 +8,7 @@
     {{else}}
     <h3>Create and share free polls!</h3>
     {{/if}}
-    <button class="btn btn-lg btn-success headbtn">Create Poll</button>
+    <a class="btn btn-lg btn-success headbtn" href="/polls/createpoll">Create Poll</a>
     {{#if name}}
     <a class="btn btn-lg btn-warning headbtn" href="/dashboard">Visit Dashboard</a>
     {{else}}
@@ -44,3 +47,5 @@
         </div>
     </div>
 </div>
+
+<!--NEED TO ADD ERROR ON LOG IN --> 

@@ -1,0 +1,25 @@
+<div class="row">
+<h1 class="pollres-h1 text-center col-md-8 col-md-offset-2">{{title}}</h1>
+{{#if message}}
+<p class="alert alert-success col-md-8 col-md-offset-2">{{message}}</p>
+{{/if}}
+<div class="chart-box">
+    <canvas id="myChart" width="390" height="390"></canvas>
+    <p class="poll-return text-center"><a href="/polls/find/{{polls._id}}">Click Here</a> to return to the poll.</p>
+    {{#if name}}
+    <p class="poll-return text-center"><a href="/dashboard">Return to Dashboard</a></p>
+    {{/if}}
+</div>
+</div>
+
+<script>
+    window.onload = function(){ 
+        var id = window.location.href;
+        id = id.split("results/")[1];
+        $.get('/polls/ajax/'+id, function(res) {
+            var data = res;
+            var ctx = document.getElementById("myChart").getContext("2d");
+            new Chart(ctx).Pie(data, {segmentStrokeColor : "black", segmentStrokeWidth : 5});
+        });
+    }
+</script>

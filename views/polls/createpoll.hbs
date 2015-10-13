@@ -13,6 +13,11 @@
             <label for="title">Give your Poll a Title</label>
             <input type="text" class="form-control" name="title" placeholder="Title" value="{{input.title}}" required>
         </div>
+        {{#if username}}
+        <input type="hidden" name="author" value="{{username}}">
+        {{else}}
+        <input type="hidden" name="author" value="Guest">
+        {{/if}}
         <div class="form-group">
             <label for="title">Select Category</label>
             <select class="form-control" id="category" name="category" placeholder="Choose Category">

@@ -1,15 +1,31 @@
 body {
   font-family: Georgia;
+  background: #0E0E2F;
+  color: #0E0E2F;
 }
 
+/******* Nav Bar Styles *******/
+.navbar {
+  border: 2px solid #B9B5FC;
+  border-top: 0px;
+  border-radius: 0;
+  background: #DDE2FC;
+}
+
+/******* Index Page Styles *******/
 .head-wrap {
-  border: 2px solid black;
+  border: 4px solid #B9B5FC;
   padding-bottom: 70px;
+  background: #DDE2FC;
 }
 
 .head-wrap h1 {
-  padding-top: 60px;
-  font-size: 50px;
+  padding-top: 25px;
+  font-size: 60px;
+}
+
+.head-wrap h3 {
+  font-size: 35px;
 }
 
 .headbtn {
@@ -17,10 +33,11 @@ body {
 }
 
 .info-box {
-  border: 1px solid black;
+  border: 4px solid #B9B5FC;
   margin-top: 30px;
-  height: 250px;
+  height: 225px;
   padding: 10px;
+  background: #DDE2FC;
 }
 
 .icon {
@@ -28,12 +45,20 @@ body {
 }
 
 .desc {
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .form-menu {
   padding: 20px;
   width: 275px;
+}
+
+/******* Create Account Styles *******/
+
+.createaccount {
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+  padding: 0 20px 20px 30px;
 }
 
 .signup-text {
@@ -48,6 +73,13 @@ body {
 .alert {
   margin-top: 5px;
 }
+.form-group > input {
+  border: 2px solid #0E0E2F;
+}
+
+.create-submit {
+  border: 1px solid #0E0E2F;
+}
 
 /* Main Dashboard Styles */
 .main-dashboard {
@@ -61,4 +93,28 @@ body {
 
 hr {
   border: 1px solid black;
+}
+
+.poll-wrap {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.poll-head {
+  font-size: 55px;
+  margin-bottom: 40px;
+}
+
+.chart-box {
+  width: 400px;
+  margin: 50px auto;
+}
+
+.pollres-h1 {
+  font-size: 50px;
+}
+
+.poll-return {
+  font-size: 20px;
 }

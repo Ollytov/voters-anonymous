@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/stylesheets/style.css" rel="stylesheet">
-  </head>
-  <body class="container">
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Voter's Anonymous</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">View Polls</a></li>
-        <li><a href="/polls/createpoll">Create Poll</a></li>
-        {{#if name}}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome {{name}}<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/dashboard">Visit Dashboard</a></li>
-            <li><a href="/logout">Log Out</a></li>
-          </ul>
-        </li>
-        {{else}}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In<span class="caret"></span></a>
-          <div class="dropdown-menu form-menu">
-            <form method="post">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" placeholder="Username">
-              </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Voter's Anonymous</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/polls/show/allpolls">View Polls</a></li>
+          <li><a href="/polls/createpoll">Create Poll</a></li>
+          {{#if name}}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome {{name}}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/dashboard">Visit Dashboard</a></li>
+              <li><a href="/logout">Log Out</a></li>
+            </ul>
+          </li>
+          {{else}}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In<span class="caret"></span></a>
+            <div class="dropdown-menu form-menu">
+              <form method="post" action="/login">
                 <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control password" name="password" placeholder="Password">
-              </div>
-              <button type="submit" class="btn btn-default">Log In</button>
-              {{#if error}}
-              <p class="text-danger">{{error}}</p>
-              {{/if}}
-              <p class="signup-text">No Account? <a href="/users/create">Create one now!</a></p>
-            </form>
-          </div>
-        </li>
-        {{/if}}
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-    {{{body}}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default">Log In</button>
+                {{#if error}}
+                <p class="text-danger">{{error}}</p>
+                {{/if}}
+                <p class="signup-text">No Account? <a href="/users/create">Create one now!</a></p>
+              </form>
+            </div>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {{{body}}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="/javascripts/chart.min.js"></script>
+</body>
+
 </html>

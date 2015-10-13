@@ -7,6 +7,14 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get("/polls/:author", function(req, res, next) {
+    userServices.findPolls(null, req.params.author, null, function(err, data) {
+      if (err) return next(err);
+      console.log(data);
+      res.render("polls/viewpolls", {title: "Polls by "+req.params.author, name: req.user ? req.user.firstname : null, polls: data, username: req.user ? req.user.username : null});
+    });
+});
+
 router.get('/create', function(req, res, next) {
   res.render("users/create", {name: req.user ? req.user.firstname : null});
 });
