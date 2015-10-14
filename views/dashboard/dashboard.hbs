@@ -1,15 +1,47 @@
 {{#if message}}
 <p class="alert alert-success">{{message}}</p>
 {{/if}}
-<div class="row">
-    <div class="main-dashboard col-md-12 text-center">
-        <h1>Dashboard</h1>
-        <h3>Welcome {{name}}! What would you like to do?</h3>
-    </div>
+<div class="main-dashboard text-center container-fluid">
+    <h1>Dashboard</h1>
+    <h3>Welcome {{name}}! What would you like to do?</h3>
 </div>
-
-<hr>
-<div class="poll-config">
-    <h4></h4>
-    <a href="/polls/createcategory" class="btn btn-default">Create Category</a>
+<div class="row poll-config">
+    <div class="col-md-4">
+        <div class="info-box">
+            <div class="text-center">
+                <h1 class="dash-title">Poll Options</h1>
+            </div>
+            <div class="desc text-center">
+                <p></p><a href="/polls/createpoll" class="btn btn-default create-submit dash-button">Create New Poll</a></p>
+                <p><a href="/polls/removepoll" class="btn btn-default create-submit dash-button">Remove Poll</a></p>
+                <p><a href="/polls/show/allpolls" class="btn btn-default create-submit dash-button">View All Polls</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="info-box">
+            <div class="text-center">
+                <h1 class="dash-title">Search Users</h1>
+                <p class="search-desc">Type in a user's name to view all polls made by them. The Username must be exact!</p>
+            </div>
+            <div class="desc text-center">
+                <form class="search-form" method="post">
+                    <input type="search" class="search" name="searchfield">
+                    <input type="submit" class="btn btn-default create-submit searchsubmit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="info-box">
+            <div class="text-center">
+                <h1 class="dash-title">Categories</h1>
+            </div>
+            <div class="desc text-center">
+                <p></p><a href="/polls/createcategory" class="btn btn-default create-submit dash-button">Create Category</a></p>
+                <p><a href="/polls/removecategory" class="btn btn-default create-submit dash-button">Remove Category</a></p>
+                <p><a href="/polls/show/allcategories" class="btn btn-default create-submit dash-button">View By Category</a></p>
+            </div>
+        </div>
+    </div>
 </div>

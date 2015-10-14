@@ -1,6 +1,7 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+    <div class="create-category col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
         <form method="post">
+            <input type="hidden" name="catauthor" value="{{username}}">
             <h1 class="text-center">Add Category:</h1>
             <div class="form-group">
                 <label for="title">Category Title</label>
@@ -10,7 +11,7 @@
             {{#each error}}
             <p class="errors">{{this}}</p>
             {{/each}}
-            <p class="poll-return text-center"><a href="/dashboard">Return to Dashboard</a></p>
         </form>
     </div>
 </div>
+<p class="category-wrap text-center col-md-6 col-md-offset-3"><a href="/dashboard">Return to Dashboard</a></p>

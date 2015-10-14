@@ -3,13 +3,14 @@
         <h1 class="poll-title">{{polls.title}}</h1>
         <p class="meta-info">Posted by <a href="/users/polls/{{polls.author}}">{{polls.author}}</a> in <a href="/polls/show/{{polls.category}}">{{polls.category}}</a> on {{polls.date}}.</p>
         <form method="post">
+        <p class="options-text">Options: (Pick One)</p>
         {{#each polls.options}}
         <div class="radio">
-            <label><input type="radio" name="option" value="{{this}}" required>{{this}}</label>
+            <label class="option"><input type="radio" name="option" value="{{this}}" required>{{this}}</label>
         </div>
         {{/each}}
-        <input type="submit" class="btn btn-success" value="Send Answer"></button>
+        <input type="submit" class="btn btn-default create-submit" value="Send Answer"></button>
         </form>
-        <p><a href="/polls/results/{{polls._id}}">View Results</a></p>
+        <p><a class="viewres text-center" href="/polls/results/{{polls._id}}">View Results</a></p>
     </div>
 </div>

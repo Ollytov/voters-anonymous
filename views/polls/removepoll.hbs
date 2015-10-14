@@ -1,0 +1,21 @@
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 category-header">
+        <h1 class="text-center">Click On The Poll You Want To Remove</h1>
+        <p class="remove-desc text-center">You can only delete polls that you have made on your account. Deleting a poll is permanent! Once the poll is deleted, there is no way to get it back.</p>
+    </div>
+</div>
+{{#if polls}}
+{{#each polls}}
+<div class="row">
+    <div class="text-center poll-wrap col-md-6 col-md-offset-3">
+        <h1 class="poll-title"><a href="/polls/find/{{this._id}}">{{this.title}}</a></h1>
+        <p class="meta-info">Posted by <a href="/users/polls/{{this.author}}">{{this.author}}</a> in <a href="/polls/show/{{this.category}}">{{this.category}}</a> on {{this.date}}.</p>
+        <p><a href="/polls/results/{{this._id}}" class="btn btn-default poll-btn">View Results</a><a href="/polls/find/{{this._id}}" class="btn btn-default poll-btn">Vote In Poll</a><a href="/polls/removepoll/{{this._id}}" class="btn btn-default poll-btn">Remove Poll</a></p>
+    </div>
+</div>
+{{/each}} 
+{{else}}
+<h1 class="category-wrap text-center">There are no Polls You Can Remove!</h1> 
+{{/if}}
+<p class="category-wrap text-center col-md-6 col-md-offset-3"><a href="/dashboard">Return to Dashboard</a></p>

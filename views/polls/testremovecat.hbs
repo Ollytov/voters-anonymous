@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 confirm-head">
+        <h1 class="text-center">Are you sure you want to remove this category?</h1>
+        <p class="remove-desc text-center">Once you perform this action, it cannot be undone!</p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="text-center category-wrap col-md-4 col-md-offset-4">
+        <p class="confirm">Yes, I am sure!</p> 
+        <p class="confirm">Remove {{category}} from the list of categories!</p>
+        <form method="post">
+            <input type="hidden" name="category" value="{{category}}">
+            <input type="submit" class="btn btn-default create-submit remove-cat" value="Remove">
+        </form>
+    </div>
+</div>
+<p class="category-wrap text-center col-md-6 col-md-offset-3"><a href="/dashboard">Return to Dashboard</a></p>

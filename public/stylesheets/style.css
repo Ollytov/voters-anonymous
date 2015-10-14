@@ -8,15 +8,32 @@ body {
 .navbar {
   border: 2px solid #B9B5FC;
   border-top: 0px;
-  border-radius: 0;
+  border-radius: 0 0 10px 10px;
   background: #DDE2FC;
 }
+
+.navbar-header .navbar-brand,
+.navbar-header .navbar-brand:hover,
+.nav > li:nth-child(1) > a:nth-child(1),
+.nav > li:nth-child(2) > a:nth-child(1),
+.nav .dropdown .dropdown-toggle {
+  color: #0E0E2F;
+}
+
+.form-menu {
+  padding: 20px;
+  width: 275px;
+  background: #DDE2FC;
+  border: 2px solid #0E0E2F;
+}
+
 
 /******* Index Page Styles *******/
 .head-wrap {
   border: 4px solid #B9B5FC;
   padding-bottom: 70px;
   background: #DDE2FC;
+  border-radius: 10px;
 }
 
 .head-wrap h1 {
@@ -38,6 +55,7 @@ body {
   height: 225px;
   padding: 10px;
   background: #DDE2FC;
+  border-radius: 10px;
 }
 
 .icon {
@@ -48,17 +66,33 @@ body {
   font-size: 20px;
 }
 
-.form-menu {
-  padding: 20px;
-  width: 275px;
+.btn-success {
+  background: #021A69;
+  border: 1px solid #011248;
 }
 
-/******* Create Account Styles *******/
+.btn-success:hover {
+  background: #062BA3;
+  border: 1px solid #011248;
+}
 
-.createaccount {
+.btn-warning {
+  background: #52D4E6;
+  border: 1px solid #25CDE5;
+}
+
+.btn-warning:hover {
+  background: #01A7BE;
+  border: 1px solid #25CDE5;
+}
+
+/******* Create Account / Create Poll Styles *******/
+
+.create {
   background: #DDE2FC;
   border: 4px solid #B9B5FC;
   padding: 0 20px 20px 30px;
+  border-radius: 10px;
 }
 
 .signup-text {
@@ -73,37 +107,142 @@ body {
 .alert {
   margin-top: 5px;
 }
-.form-group > input {
+.form-group > input,
+#category {
   border: 2px solid #0E0E2F;
+}
+
+.fixer {
+  margin: 10px auto;
 }
 
 .create-submit {
   border: 1px solid #0E0E2F;
 }
 
-/* Main Dashboard Styles */
+.create-submit:hover {
+  border: 1px solid #0E0E2F;
+}
+
+.add-option {
+}
+
+/******* Main Dashboard Styles *******/
 .main-dashboard {
   height: 300px;
   padding: 50px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
 }
 
 .main-dashboard h1 {
   font-size: 60px;
 }
 
+.main-dashboard h3 {
+  font-size: 30px;
+}
+
 hr {
   border: 1px solid black;
 }
 
-.poll-wrap {
-  border: 2px solid black;
+.dash-title {
+  font-size: 35px;
+  margin: 0px;
+}
+
+.dash-button {
+  margin: 3px 0;
+}
+
+.return-dash {
+  margin-top: 20px;
+}
+
+.search-form {
+  margin-top: 20px;
+  padding: 5px 0 0 0;
+  
+}
+
+.searchsubmit {
+  vertical-align: top;
+}
+
+.search-desc {
+  font-size: 18px;
+}
+
+.search {
+  border: 1px solid #0E0E2F;
+  vertical-align: top;
+}
+
+/******* View Polls Styles *******/
+
+.poll-wrap,
+.create-category,
+.error-wrap {
   border-radius: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+}
+
+.create-category {
+  padding-bottom: 20px;
 }
 
 .poll-head {
   font-size: 55px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+  border-radius: 20px;
+}
+
+.poll-title a {
+  color: #0E0E2F;
+  text-decoration: none;
+}
+
+.poll-btn {
+  border: 2px solid #0E0E2F;
+  width: 100px;
+  margin: 0 10px;
+}
+
+.poll-btn:hover {
+  border: 2px solid #0E0E2F;
+}
+
+.options-text {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.option {
+  font-size: 22px;
+  margin-top: -5px;
+}
+
+.optionval {
+  margin-top: -3px;
+}
+
+.viewres {
+  font-size: 22px;
+  color: #0E0E2F;
+}
+
+/******* Poll Results Styles *******/
+
+.pollresults {
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
 }
 
 .chart-box {
@@ -115,6 +254,105 @@ hr {
   font-size: 50px;
 }
 
+.pollres-h2 {
+  font-size: 40px;
+}
+
 .poll-return {
   font-size: 20px;
+}
+
+.novotes {
+  font-size: 20px;
+}
+
+/******* View All Categories Styles *******/
+
+.category-wrap {
+  border-radius: 20px;
+  margin-bottom: 30px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+}
+
+.add-padding {
+  padding: 10px;
+}
+
+.remove-category-accept {
+  border-radius: 20px;
+  margin-top: 20px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+}
+
+.remove-category-accept a {
+  font-size: 40px;
+  color: #0E0E2F;
+  text-decoration: none;
+}
+
+.category-wrap a {
+  font-size: 40px;
+  color: #0E0E2F;
+  text-decoration: none;
+}
+
+.add-margin {
+  margin-top: 20px;
+}
+
+/******* Remove Categories Styles *******/
+
+.remove-head,
+.confirm-head {
+  font-size: 40px;
+  margin-bottom: 10px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.remove-desc {
+  font-size: 19px;
+  border-radius: 20px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+.confirm {
+  font-size: 25px;
+}
+
+.remove-cat {
+  margin-bottom: 10px;
+}
+
+.confirm-head {
+  padding: 0;
+}
+
+.category-header {
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.poll-remove-wrap {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: #DDE2FC;
+  border: 4px solid #B9B5FC;
+}
+
+.poll-remove-wrap a {
+  font-size: 40px;
+  color: #0E0E2F;
+  text-decoration: none;
+}
+
+.error-wrap {
+  padding: 40px;
 }

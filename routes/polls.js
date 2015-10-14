@@ -15,6 +15,13 @@ router.get('/show/allpolls', function(req, res, next) {
   });
 });
 
+router.get("/show/allcategories", function(req, res, next) {
+    userServices.findCategories(function(err, data) {
+       if (err) return next(err); 
+       res.render("polls/viewcategories", {title: "All Categories", name: req.user ? req.user.firstname : null, category: data, username: req.user ? req.user.username : null}); 
+    });
+});
+
 router.get("/show/:category", function(req, res, next) {
     userServices.findPolls(null, null, req.params.category, function(err, data) {
       if (err) return next(err);
@@ -32,6 +39,32 @@ router.get("/createpoll", function(req, res, next) {
 
 router.get("/createcategory", restrict, function(req, res, next) {
    res.render("polls/createcategory", {title: "Create Category", name: req.user ? req.user.firstname : null, username: req.user ? req.user.username : null}); 
+});
+
+router.get("/removecategory", restrict, function(req, res, next) {
+    userServices.findCategoriesByAuthor(req.user.username, function(err, data) {
+       if (err) return next(err); 
+       res.render("polls/removecategory", {title: "Remove Category", name: req.user ? req.user.firstname : null, category: data, username: req.user ? req.user.username : null}); 
+    });
+});
+
+router.get("/removecategory/:category", function(req, res, next) {
+    console.log("Removing...");
+    res.render("polls/testremovecat", {title: "Remove Category", name: req.user ? req.user.firstname : null, username: req.user ? req.user.username : null, category: req.params.category});
+});
+
+router.post("/removecategory/:category", function(req, res, next) {
+    userServices.removeCategory(req.body.category, function(err, next) {
+        if (err) {
+            var vm = {
+                title: "Remove Category",
+                error: err
+            }
+            return res.render("polls/testremovecat");
+        }
+        req.flash("success", "You have successfully removed a category from the list!");
+        res.redirect("/dashboard");
+    });
 });
 
 router.post("/createcategory", function(req, res, next) {
@@ -60,6 +93,30 @@ router.post("/createpoll", function(req, res, next) {
     })
 });
 
+router.get("/removepoll", function(req, res, next) {
+    var author = req.user ? req.user.username : "Guest";
+    userServices.findPolls(null, author, null, function(err, data) {
+       if (err) return next(err); 
+       console.log(data);
+       res.render("polls/removepoll", {title: "Remove Poll", name: req.user ? req.user.firstname : null, polls: data, username: req.user ? req.user.username : null}); 
+    });
+});
+
+router.get("/removepoll/:id", function(req, res, next) {
+    console.log("Removing...");
+    userServices.removePoll(req.params.id, function(err, next) {
+        if (err) {
+            var vm = {
+                title: "Remove Poll",
+                error: err
+            }
+            return res.render("polls/removepoll");
+        }
+        req.flash("success", "You have successfully removed the poll selected!");
+        res.redirect("/dashboard");
+    });
+});
+
 router.get("/find/:id", function(req, res, next) {
     userServices.findPolls(req.params.id, null, null, function(err, data) {
       if (err) return next(err);
@@ -84,7 +141,8 @@ router.get("/results/:id", function(req, res, next) {
                     label: results[i].label
                 });
             }
-            res.render("polls/pollresults", {title: data[0].title, name: req.user ? req.user.firstname : null, polls: data[0], username: req.user ? req.user.username : null, data: chartData, message: req.flash("success")});
+            console.log(data[0].votes.length);
+            res.render("polls/pollresults", {title: data[0].title, name: req.user ? req.user.firstname : null, polls: data[0], username: req.user ? req.user.username : null, data: chartData, message: req.flash("success"), votes: function(){if (data[0].votes.length !== 0) {return true;}}});
       });
     });
     

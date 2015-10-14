@@ -4,6 +4,7 @@ var userServices = require("../services/user-services");
 
 var categorySchema = new Schema({
    category: {type: String, required: "Please Enter A Category"},
+   author: {type: String}
 });
 
 categorySchema.path("category").validate(function(value, next) {

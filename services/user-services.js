@@ -87,7 +87,9 @@ module.exports.addVote = function(id, option, next) {
 module.exports.addCategory = function(category, next) {
     var newCategory = new Category({
        category: category.title,
+       author: category.catauthor
     });
+    console.log(newCategory);
     newCategory.save(function(err) {
         if (err) return next(err);
         next(null);
@@ -102,6 +104,13 @@ module.exports.findCategory = function(category, next) {
 
 module.exports.findCategories = function(next) {
     Category.find({}).exec(function(err, data) {
+       if (err) return next(err); 
+       next(err, data);
+    });
+}
+
+module.exports.findCategoriesByAuthor = function(author, next) {
+    Category.find({author: author}).exec(function(err, data) {
        if (err) return next(err); 
        next(err, data);
     });
@@ -138,4 +147,26 @@ module.exports.findPolls = function(id, author, category, next) {
             next(err, data);
         })
     }
+}
+
+module.exports.removeCategory = function(category, next) {
+    Category.find({category: category}).remove(function(err) {
+        if (err) return next(err);
+        next(null);
+    });
+}
+
+
+module.exports.removePoll = function(id, next) {
+    Poll.find({_id: id}).remove(function(err) {
+        if (err) return next(err);
+        next(null);
+    });
+}
+
+module.exports.searchUser = function(user, next) {
+    User.find({username: user}).exec(function(err, data) {
+        if (err) return next(err);
+        next(err, data);
+    });
 }
